@@ -32,7 +32,7 @@ public class BlogService {
         List<Blog> blogs = blogRepository.findAll().stream()
                 .filter(blog -> !blog.isDeleted()).collect(Collectors.toList());
         for (int i=0 ; i < blogs.size(); i++) {
-            String description = blogs.get(i).getDescription().subSequence(0, 200).toString();
+            String description = blogs.get(i).getDescription().toString();
             System.out.println("description "  +description);
             blogs.get(i).setDescription(description);
         }

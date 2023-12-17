@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Table(name = "blogs")
 public class Blog {
     @Id
     @Column(updatable = false,insertable = false)

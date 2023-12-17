@@ -73,7 +73,7 @@
                 <div class="product-cell sales"><span class="cell-label" >Creation Date:</span> <span th:text = "${blog.creationDate}"></span></div>
                 <div class="product-cell stock"><span class="cell-label">Description:</span><span th:text = "${blog.imageName}"></span></div>
                 <div class="product-cell price"><span class="cell-label">Action:</span>
-                    <a style="margin-right: 5px; color: greenyellow" href="">Edit </a>
+                    <a style="margin-right: 5px; color: greenyellow" th:href="@{'/blog/' + ${blog.id}}">Edit </a>
                     <a style="margin-left: 5px; color: greenyellow" th:href="@{'/blog/delete/' + ${blog.id}}">Delete </a>
                 </div>
             </div>

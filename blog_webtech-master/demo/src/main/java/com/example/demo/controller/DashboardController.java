@@ -73,8 +73,9 @@ public class DashboardController {
         if (id == null || id.equals(""))
             return "redirect:/dashboard";
         Blog blog = blogService.getBlogById(id);
-        blog.setDeleted(true);
-        blogService.save(blog);
+//        blog.setDeleted(true);
+//        blogService.save(blog);
+        blogService.delete(blog);
         return "redirect:/dashboard";
     }
 
@@ -92,7 +93,8 @@ public class DashboardController {
     @PostMapping("/saveBlog")
     public String saveBlog(Model model, @ModelAttribute("blog") Blog blog) {
         try {
-            String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/demo/src/main/resources/static/uploads";
+            String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/blog_webtech-master/demo/src/main/resources/static/uploads";
+
             Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, blog.getMultipartFile().getOriginalFilename());
             Files.copy(blog.getMultipartFile().getInputStream(), fileNameAndPath, StandardCopyOption.REPLACE_EXISTING);
             blog.setImageName(blog.getMultipartFile().getOriginalFilename());
