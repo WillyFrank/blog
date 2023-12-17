@@ -100,6 +100,9 @@ Relationships:
 User-to-Blog: One-to-Many
 Blog-to-Comment: One-to-Many
 
+![frank](https://github.com/WillyFrank/blog/assets/78257727/520b4061-bbcb-4e9c-9003-0de0d7b6e08b)
+
+
 **User Documentation:
  
  *How to Use the Application:
